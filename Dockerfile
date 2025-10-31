@@ -21,6 +21,8 @@ RUN apk add --no-cache --virtual .build-deps \
   && git clone --depth 1 https://github.com/SpiderLabs/ikeforce.git /opt/ikeforce \
   && chmod +x /opt/ikeforce/ikeforce.py \
   && ln -s /opt/ikeforce/ikeforce.py /usr/local/bin/ikeforce \
+  && sed -i 's/^[[:space:]]*import[[:space:]]\+ikecrypto[[:space:]]*$/import ikecrypto as crypto/' /opt/ikeforce/ikehandler.py \
+  && sed -i 's/^from[[:space:]]*Crypto\.Cipher[[:space:]]*import[[:space:]]*\*$/from Crypto.Cipher import DES3, DES/' /opt/ikeforce/ikecrypto.py \
   && apk del .build-deps \
   && rm -rf /var/cache/apk/* /root/.cache/pip /tmp/requirements.txt
 

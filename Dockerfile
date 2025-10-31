@@ -14,7 +14,7 @@ RUN apk add --no-cache --virtual .build-deps \
        echo 'scapy==2.4.5'; \
        echo 'pycrypto==2.6.1'; \
        echo 'cryptography==2.9.2'; \
-       echo 'pyOpenSSL==18.0.0'; \
+       echo 'pyOpenSSL==16.2.0'; \
        echo 'pexpect==4.8.0'; \
      } > /tmp/requirements.txt \
   && pip install --no-cache-dir -r /tmp/requirements.txt \

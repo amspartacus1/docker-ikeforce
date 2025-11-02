@@ -1,6 +1,6 @@
-# **WIP**: IKEForce on `python:2.7.17-alpine`
+# **WIP**: IKEForce on python:2.7.17-alpine
 
-> **Note**: IKEForce is an offensive‑security tool. Use only on systems you own or have explicit written permission to test.
+> **Note**: Use only on systems you own or have explicit written permission to test.
 
 This section provides ready-to-use instructions to build and run a Docker image that bundles **IKEForce** with its Python 2.7 dependencies (including the legacy `pyip` package that supplies the `udp` module).
 
@@ -8,7 +8,7 @@ This section provides ready-to-use instructions to build and run a Docker image 
 
 ## Files
 
-- `Dockerfile` — Base image `python:2.7.17-alpine`, installs runtime deps (`bash`, `ca-certificates`, `libpcap`) and Python packages: `pyip==0.7`, `scapy==2.4.5`, `pycrypto==2.6.1`, `cryptography==2.9.2`, `pyOpenSSL==18.0.0`, `pexpect==4.8.0`. Clones IKEForce.
+- `Dockerfile` — Base image `python:2.7.17-alpine`, installs runtime deps (`bash`, `ca-certificates`, `libpcap`) and Python packages: `pyip==0.7`, `scapy==2.4.5`, `pycrypto==2.6.1`, `cryptography==2.9.2`, `pyOpenSSL==16.2.0`, `pexpect==4.8.0`. Clones IKEForce.
 
 > The `cryptography==2.9.2` pin is the last version supporting Python 2.7. `pyip` provides the `udp` module that IKEForce imports.
 
